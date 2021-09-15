@@ -47,8 +47,8 @@ def path_and_rename_news(instance, filename):
 class News(models.Model):
     author = models.ForeignKey(User,on_delete=models.CASCADE)
     date_added = models.DateTimeField(auto_now_add=True)
-    title = models.TextField(max_length=50, unique=True)
-    body = models.TextField(max_length=500)
+    title = models.TextField(max_length=255, unique=True)
+    body = models.TextField(max_length=1000)
     news_pic = models.ImageField(upload_to=path_and_rename_news, verbose_name="Profile Picture", blank=True)
 
     class Meta:

@@ -124,6 +124,7 @@ class Courses(models.Model):
     title = models.CharField(max_length=100, blank=True, unique=True)
     description = models.TextField(max_length=500)
     image = models.ImageField(upload_to=save_course_image, blank=True, verbose_name='Course Image')
+
     
     def __str__(self):
         return self.title
